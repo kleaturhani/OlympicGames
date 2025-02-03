@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="resultsData"
+            type="it.programmazionemobile.olympicgames2024.data.model.ResultsEntity" />
+
+        <variable
+            name="viewModel"
+            type="it.programmazionemobile.olympicgames2024.viewmodel.ItemResultsViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/likeButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@android:color/transparent"
+                android:stateListAnimator="@null"
+                app:cornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtNameMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Nomi delle squadre"
+                android:textColor="@color/blackolympic"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/namematchData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{resultsData.matchSquadsName}"
+                android:textColor="@color/blackolympic"
+                android:textSize="12sp" />
+
+            <!-- Additional TextViews -->
+            <TextView
+                android:id="@+id/finalPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Punteggi Finali"
+                android:textColor="@color/blackolympic"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/finalPointData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{resultsData.finalPoints}"
+                android:textColor="@color/blackolympic"
+                android:textSize="12sp" />
+
+            <!-- Stato -->
+            <TextView
+                android:id="@+id/txtStato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Stato dell'Evento:"
+                android:textColor="@color/blackolympic"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/statoData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{resultsData.eventStatus}"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <!-- Bandierine -->
+            <TextView
+                android:id="@+id/txtBandiere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Bandierine dei Competitori e Posizioni:"
+                android:textColor="@color/blackolympic"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/bandiereData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{resultsData.matchFlags}"
+                android:textColor="@color/blackolympic"
+                android:textSize="12sp" />
+
+            <!-- Data e Ora -->
+            <TextView
+                android:id="@+id/txtData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Data e Ora dell'Evento:"
+                android:textColor="@color/blackolympic"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/dataData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="@{resultsData.formattedDate}"
+                android:textColor="@color/blackolympic"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

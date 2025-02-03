@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508385228477",
+    "project_id": "olympicgames2024-1204d",
+    "storage_bucket": "olympicgames2024-1204d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508385228477:android:2d0f37b869852f4cc8a9d4",
+        "android_client_info": {
+          "package_name": "it.programmazionemobile.olympicgames2024"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508385228477-6k3l8gafbs00kiitn0mls9kjtst18l1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI1lirmWUv1LgVRtf7NshK0pF-TlP8WqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508385228477-6k3l8gafbs00kiitn0mls9kjtst18l1k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

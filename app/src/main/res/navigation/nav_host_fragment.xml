@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="it.programmazionemobile.olympicgames2024.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_search"
+            app:destination="@id/nav_search" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_favourite"
+            app:destination="@id/nav_favourite" />
+        <action
+            android:id="@+id/action_nav_home_to_disciplineFragment"
+            app:destination="@id/disciplineFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/disciplineFragment"
+        android:name="it.programmazionemobile.olympicgames2024.view.DisciplineFragment"
+        android:label="fragment_discipline"
+        tools:layout="@layout/fragment_discipline">
+        <action
+            android:id="@+id/action_basketballFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_disciplineFragment_to_resultsdisciplineFragment"
+            app:destination="@id/resultsdisciplineFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultsdisciplineFragment"
+        android:name="it.programmazionemobile.olympicgames2024.view.ResultsDisciplineFragment"
+        android:label="fragment_results"
+        tools:layout="@layout/fragment_results">
+        <action
+            android:id="@+id/action_resultsdisciplineFragment_to_disciplineFragment"
+            app:destination="@id/disciplineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="it.programmazionemobile.olympicgames2024.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="it.programmazionemobile.olympicgames2024.view.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_editprofile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_profileFragment"
+            app:destination="@id/nav_profile" />
+    </fragment>
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="it.programmazionemobile.olympicgames2024.view.IntroActivity"
+        android:label="IntroActivity" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="it.programmazionemobile.olympicgames2024.view.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_nav_search_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_favourite"
+        android:name="it.programmazionemobile.olympicgames2024.view.FavouriteFragment"
+        android:label="fragment_favourite"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_nav_favourite_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>
+

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.EditProfileFragment">
+
+    <data>
+
+        <variable
+            name="userData"
+            type="it.programmazionemobile.olympicgames2024.viewmodel.UserViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackolympic"
+        android:fillViewport="true"
+        android:paddingBottom="50dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blackolympic">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="112dp"
+                android:layout_height="109dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/img_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.103"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSaveModification"
+                style="@style/btnSolidRounded"
+                android:layout_width="143dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="44dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:paddingTop="9dp"
+                android:paddingEnd="7dp"
+                android:paddingBottom="9dp"
+                android:singleLine="true"
+                android:text="@string/txtSaveEdit"
+                android:textAllCaps="false"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toTopOf="@+id/usernameLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toEndOf="@+id/profileImage"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.118"
+                tools:text="@string/txtSaveEdit" />
+
+            <TextView
+                android:id="@+id/usernameLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/username"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileImage"
+                tools:text="@string/username" />
+
+            <EditText
+                android:id="@+id/newUsername"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:inputType="text"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="@{userData.username}"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usernameLabel"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/mailLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/email"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newUsername"
+                tools:text="@string/email" />
+
+            <EditText
+                android:id="@+id/newMail"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:inputType="textEmailAddress"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="@{userData.email}"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mailLabel"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/name"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newMail"
+                tools:text="@string/name" />
+
+            <EditText
+                android:id="@+id/newNome"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:inputType="text"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="@{userData.nome}"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/cognomeLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/surname"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newNome"
+                tools:text="@string/surname" />
+
+            <EditText
+                android:id="@+id/newCognome"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:inputType="text"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="@{userData.cognome}"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cognomeLabel"
+                tools:ignore="Autofill,LabelFor" />
+
+            <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/prompt_password"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newCognome"
+                tools:text="@string/prompt_password" />
+
+            <EditText
+                android:id="@+id/currentPassword"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:hint="@string/currentPasswordHint"
+                android:inputType="textPassword"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLabel"
+                tools:ignore="Autofill" />
+
+            <TextView
+                android:id="@+id/newPasswordLabel"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/new_password"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currentPassword"
+                tools:text="@string/new_password" />
+
+            <EditText
+                android:id="@+id/newPassword"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:hint="@string/txtEmptyNotEdit"
+                android:inputType="textPassword"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newPasswordLabel"
+                tools:ignore="Autofill, TextFields" />
+
+            <TextView
+                android:id="@+id/checkNewPasswordLabel"
+                android:layout_width="199dp"
+                android:layout_height="17dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="14dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="10dp"
+                android:singleLine="true"
+                android:text="@string/confirmPassword"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newPassword"
+                tools:text="@string/confirmPassword" />
+
+            <EditText
+                android:id="@+id/checkNewPassword"
+                android:layout_width="328dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="0dp"
+                android:ellipsize="end"
+                android:hint="@string/txtEmptyNotEdit"
+                android:inputType="textPassword"
+                android:lineSpacingExtra="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="13dp"
+                android:paddingEnd="30dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:textColorHint="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkNewPasswordLabel"
+                tools:ignore="Autofill,TextFields" />
+
+
+            <ProgressBar
+                android:id="@+id/waitingBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="124dp"
+                android:layout_height="121dp"
+                android:layout_marginTop="328dp"
+                android:shadowColor="@color/yellowolympic"
+                app:layout_constraintBottom_toBottomOf="@+id/btnSaveModification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/profileImage"
+                app:layout_constraintVertical_bias="0.037" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

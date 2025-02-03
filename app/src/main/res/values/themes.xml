@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.OlympicGames2024" parent="Theme.MaterialComponents.NoActionBar" >
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/yellowolympic</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">serif</item>
+
+    </style>
+
+</resources>

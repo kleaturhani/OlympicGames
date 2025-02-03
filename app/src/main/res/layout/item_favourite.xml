@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="resultsData"
+            type="it.programmazionemobile.olympicgames2024.data.model.ResultsEntity" />
+
+        <variable
+            name="viewModel"
+            type="it.programmazionemobile.olympicgames2024.viewmodel.ItemResultsViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFavouriteName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{resultsData.matchName}" />
+
+            <ImageButton
+                android:id="@+id/likeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{resultsData.isFavourite ? @drawable/icon_heart_red : @drawable/icon_heart_empty}" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
