@@ -49,7 +49,7 @@ class ItemResultsViewModel(private val resultsDao: ResultsDao) :
         viewModelScope.launch(Dispatchers.IO) {
             resultsDao.update(result) // Salva nel database
 
-            // Log the updated value of isFavourite
+            // Log the updated value of isFavourite for debug
             Log.d(
                 "ItemResultsViewModel",
                 "Updated result ${result.id} isFavourite: ${result.isFavourite}"
